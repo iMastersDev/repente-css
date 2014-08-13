@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br"> 
+<head>
+  <title>William Bruno - ---to Menu</title>
+<style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  background: url('bg-body.jpg') repeat-x;
+  width: 980px;
+  margin: 231px auto 0 auto;
+}
+#menu {
+  background: #fff;
+  height: 20px;
+  line-height: 20px;
+  border-bottom: 1px solid #cfcfcb;
+  padding: 5px;
+}
+#menu li {
+  float: left;
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+}
+#menu li ul {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  background: #fff;
+  padding: 0 2px;
+  border: 1px solid #cfcfcb;
+}
+/* bug IE6 com elementos de width 100% */
+* html #menu li ul {
+  width: 129px;
+}
+#menu li a {
+  color: #333;
+  padding: 0 10px;
+  text-decoration: none;
+}
+#menu li:hover,
+#menu li.over {
+  background: url('bg-menu-li.jpg') no-repeat left top;
+  overflow: visible;
+}
+#menu li:hover a,
+#menu li.over a {
+  background: url('bg-menu-li-a.jpg') no-repeat right top;
+  color: #fff;
+  height: 20px;
+}
+#menu li ul li {
+  height: 22px;
+  margin: 2px 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+#menu li:hover ul li a,
+#menu li:hover ul li,
+#menu li.over ul li a,
+#menu li.over ul li {
+  background: none;
+  color: #333;
+}
+#menu li ul li:hover,
+#menu li ul li.over {
+  background: url('bg-menu-ul-li.jpg') no-repeat;
+}
+#menu li ul li:hover a,
+#menu li ul li.over a {
+  background: url('bg-menu-ul-li-a.jpg') no-repeat right top;
+  text-decoration: underline;
+  height: 22px;
+}
+#menu li ul li a {
+  display: block;
+}
+#menu li ul li {
+  display: block;
+  width: 100%;
+}
+</style>
+<script type="text/javascript">
+window.onload = function() {
+  if (document.all&&document.getElementById){
+    navRoot = document.getElementById('menu');
+    for (var i=0; i<navRoot.childNodes.length; i++) {
+      node = navRoot.childNodes[i];
+      if (node.nodeName=='LI')
+        hoverIE( node );
+    }
+    var sub = navRoot.getElementsByTagName('ul');
+    
+    for( var i=0;i<sub.length;i++ )
+    {
+      for( var j=0;j<sub[i].childNodes.length;j++ )
+      {
+        var node = sub[i].childNodes[j];
+        hoverIE( node );
+      }
+    }
+  }
+}
+function hoverIE( node )
+{
+  node.onmouseover=function(){
+    this.className+=' over';
+  }
+  node.onmouseout=function(){
+    this.className=this.className.replace(' over', '');
+  }
+}
+</script>
+</head>
+<body>
+  <ul id="menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Game</a>
+      <ul>
+        <li><a href="#">Inimigos</a></li>   
+        <li><a href="#">Truques</a></li>
+      </ul>   
+    </li>
+    <li><a href="#">Dicas e Detonados</a>
+      <ul>
+        <li><a href="#">Estratégias</a></li>    
+        <li><a href="#">Telas e Mapas</a></li>
+        <li><a href="#">Itens Secretos</a></li>
+        <li><a href="#">Outras</a></li>
+      </ul>   
+    </li>
+    <li><a href="#">Voltar</a></li> 
+  </ul><!-- /menu -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet tristique justo. 
+  Aenean sit amet erat turpis, vel scelerisque mauris. Proin aliquet hendrerit augue, ut commodo 
+  velit fringilla nec. Vivamus feugiat bibendum sem, tincidunt accumsan ligula pretium id. Pellentesque 
+  habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin eget mauris
+  magna, vel ullamcorper arcu. Sed et lectus dui. Cras est metus, sodales id lacinia eget, bibendum 
+  ut neque. Aenean dapibus pharetra purus vel fringilla. Nulla aliquet, urna eget faucibus malesuada,
+  ante risus sollicitudin ipsum, quis lobortis velit tortor non nisi. Mauris vitae lectus ut lacus
+  semper tincidunt eu ut mauris. In id urna eget orci tincidunt imperdiet non et mauris. Vestibulum
+  accumsan, nulla ac vestibulum pretium, lorem sapien adipiscing arcu, non malesuada libero enim 
+  eget nisi. Vivamus placerat felis vitae tortor pellentesque ut mattis nisi sollicitudin. 
+  Pellentesque eget hendrerit ligula. Sed viverra mi et turpis cursus varius. Donec venenatis
+  sagittis enim eget mattis. Donec in urna sapien, vel commodo eros. Nullam ac sem ante, 
+  ac pretium sem. Cras scelerisque venenatis ipsum.</p>
+  
+</body>
+</html>

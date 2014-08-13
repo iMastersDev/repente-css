@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br"> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" /> 
+  <title>William Bruno - Nono Menu - Repente CSS [Menus]</title> 
+<style type="text/css"> 
+* { margin: 0; padding: 0; list-style: none; }
+body {
+  font-size: 12px;
+  font-family: Tahoma, Georgia, sans-serif;
+  margin: 50px;
+}
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+#menu li {
+  float: left;
+  height: 25px;
+  line-height: 30px;
+  width: 200px;
+  margin-right: 10px;
+  position: relative;
+  text-align: center;
+  color: #105330;
+  font-size: 20px;
+  font-weight: bold;
+  background: url('seta.jpg') no-repeat 172px 18px;
+  padding-top: 5px;
+}
+#menu span {
+  position: absolute;
+  font-size: 10px;
+  left: 0px;
+  bottom: -9px;
+  width: 200px;
+  text-align: center;
+  display: block;
+  backg round: #f0f;
+  line-height: 10px;
+}
+#menu li:hover,
+#menu li.over {
+  background: url('bg-menu-li.jpg') #990100 no-repeat;
+  color: #fff;
+  cursor: pointer;
+}
+#menu li:hover a,
+#menu li.over a {
+  background: url('bg-menu-ul.jpg') #990100 no-repeat left bottom;
+  color: #fff;
+}
+#menu li:hover li a,
+#menu li.over li a {
+  background: none;
+}
+#menu li:hover ul,
+#menu li.over ul {
+  display: block;
+}
+#menu li:hover li, 
+#menu li.over li {
+  background: none;
+}
+#menu li li {
+  margin: 0;
+}
+#menu a {
+  color: #105330; 
+  display: block;
+  background: #fff;
+  padding-bottom: 5px;
+}
+#menu ul a {
+  color: #fff;
+  font-size: 16px;
+  background: none;
+}
+#menu ul {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 200px;
+  background: url('bg-menu-ul.jpg') #990100 no-repeat left bottom;
+  padding-bottom: 5px;
+}
+#menu li li {
+  background: none;
+  line-height: 20px;
+}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+  if( document.all ){
+    navRoot = document.getElementById("menu");
+    for (i=0; i<navRoot.childNodes.length; i++){
+      node = navRoot.childNodes[i];
+      if (node.nodeName=="LI"){
+        node.onmouseover=function(){
+          this.className+=" over";
+        }
+        node.onmouseout=function(){
+          this.className=this.className.replace(" over", "");
+        }
+      }
+    }
+  }
+}
+</script>
+</head>
+<body>
+  <ul id="menu">
+    <li><a href="">Home</a></li>
+    <li>Game <span>Inimigos, Truques</span>
+      <ul>
+        <li><a href="">Inimigos</a></li>
+        <li><a href="">Truques</a></li>
+      </ul>
+    </li>
+    <li><a href="">Dicas</a></li>
+    <li>Detonados <span>Estratégias, Telas, Itens Secretos</span>
+      <ul>
+        <li><a href="">Estratégias</a></li>
+        <li><a href="">Telas</a></li>
+        <li><a href="">Itens Secretos</a></li>
+      </ul>
+    </li>
+  </ul><!-- /menu -->
+</body>
+</html>

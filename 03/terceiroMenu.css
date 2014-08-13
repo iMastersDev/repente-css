@@ -1,0 +1,55 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  margin: 20px;
+  background: #000;
+}
+#menu li {
+  float: left;
+  margin-left: 5px;
+  height: 28px;
+  background: url('bgLIs.png') left center;
+}
+#menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 0 25px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  background: url('cantos.png') no-repeat right center;
+}
+/* bug do IE6 com o display: block; para elementos sem width */
+* html #menu li a {
+  width: 40px;
+}
+#menu li a:hover {
+  background: url('cantos.png') no-repeat right top;
+  color: #000;
+  text-decoration: underline;
+}
+#menu li:hover,
+#menu li.over {
+  background: url('bgLIs.png') left top;
+}
+body#home ul#menu li.home,
+body#game ul#menu li.game,
+body#dicas ul#menu li.dicas {
+  background: url('bgLIs.png') left bottom; 
+}
+body#home ul#menu li.home a,
+body#game ul#menu li.game a,
+body#dicas ul#menu li.dicas a {
+  background: url('cantos.png') no-repeat right bottom; 
+}
+body#home ul#menu li.home a:hover,
+body#game ul#menu li.game a:hover,
+body#dica ul#menu li.dicas a:hover {
+  color: #ff0;
+}

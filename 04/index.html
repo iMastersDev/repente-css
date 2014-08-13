@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <title>William Bruno - Quarto Menu - Repente CSS [Menus]</title>
+<style type="text/css">
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 20px;
+  background: #c6c6c6;
+}
+ul { /* resolver bug do Chrome, declarações que vem antes do seletor global */
+  margin: 0;
+  padding: 0;
+}
+#menu li {
+  float: left;
+  height: 43px;
+  line-height: 43px;
+  display: block;
+  background: url('./bgSub.jpg') center -22px;
+  background: url('./bgMenu.jpg');
+  margin-left: 10px;
+  border: 1.5px solid #fff;
+  padding: 0 10px 0 10px;
+  position: relative;
+  z-index: 10; /* ficar por cima do topo, que está com z-index 1 */
+  white-space: nowrap;/* bug estranho do IE6 */
+  color: #fff;
+  cursor: default;
+  text-align: center;
+}
+#menu li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+#menu li a:hover {
+  color: #6bff9d; 
+}
+#menu li ul {
+  display: none;
+  position: absolute;
+  top: 43px;
+  left: -1px;
+}
+#menu li:hover,
+#menu li.over {
+  background-image: none;
+  background-color: #2e6ba4;
+}
+#menu li.game {
+  width: 70px;
+}
+#menu li.game:hover {
+  background-color: #2e6ba4; /* sobrescrever cor mais clara no degradê do menu, caso 4 sub-itens */
+}
+#menu li.dicas:hover {
+  background-color: #3678b5; /* sobrescrever cor mais clara no degradê do menu, caso 5~6 sub-itens */
+}
+#menu li:hover ul,
+#menu li.over ul {
+  display: block;
+  background: url('./bgSub.jpg') repeat-x bottom #3678b5;
+  border: 1px solid #fff;
+  border-top: none;
+  font-size: 11px;
+}
+/* ajuste de cores IE6 */
+#menu li.over {
+  background-color: #3678b5;
+}
+#menu li.game {
+  background-color: #3371ac;  
+}
+#menu li.game ul,
+#menu li.dicas ul {
+  width: 90px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+#menu li.dicas ul {
+  width: 135px;
+}
+#menu li.game ul li,
+#menu li.dicas ul li {
+  height: 25px;
+  line-height: 25px;
+  background-image: none; /* para não precisar de seletor filho > */
+  border: none; /* zerando propriedades */
+  background-color: transparent; /* zerando propriedades */
+  padding: 0; /* zerando propriedades */
+  margin: 0; /* zerando propriedades */
+  float: none; /* zerando propriedades */
+}
+</style>
+<script type="text/javascript">
+window.onload = function() {
+if (document.all&&document.getElementById) {
+  navRoot = document.getElementById("menu");
+    for (i=0; i<navRoot.childNodes.length; i++) {
+      node = navRoot.childNodes[i];
+        if (node.nodeName=="LI") {
+          node.onmouseover=function() {
+          this.className+=" over";
+        }
+      node.onmouseout=function() {
+    this.className=this.className.replace
+  (" over", "");
+   }
+   }
+  }
+ }
+}
+</script>
+</head>
+<body>
+  <ul id="menu">
+    <li><a href="#">Home</a></li> 
+    <li class="game">Game 
+      <ul> 
+        <li><a href="#">História</a></li> 
+        <li><a href="#">Personagens</a></li>
+        <li><a href="#">Screens</a></li>
+      </ul> 
+    </li> 
+    <li class="dicas">Dicas e Detonados
+      <ul> 
+        <li><a href="#">Estratégias</a></li> 
+        <li><a href="#">Telas e Mapas</a></li>
+        <li><a href="#">Itens Secretos</a></li>
+        <li><a href="#">Inimigos (boss)</a></li>
+        <li><a href="#">Outras</a></li>
+      </ul>   
+    </li> 
+    <li><a href="#">Voltar</a></li> 
+  </ul><!-- /menu --> 
+</body>
+</html>

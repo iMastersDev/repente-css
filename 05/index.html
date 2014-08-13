@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+ <title>William Bruno - Quinto Menu - Repente CSS [Menus]</title>
+<style type="text/css">
+* {
+ margin: 0;
+ padding: 0;
+ border: none;
+ list-style: none;
+}
+body {
+ margin: 20px;
+ font-family: "Trebuchet MS", Tahoma;
+ font-size: 11px;
+}
+#menu {
+ background: url('bgMenuQuinto.jpg');
+ height: 35px;
+ padding: 0px 5px 0 0;
+ width: 463px;
+}
+#menu li {
+ float: left;
+ height: 24px;
+ padding: 5px 0 5px 5px;
+ position: relative;
+}
+#menu li ul {
+ display: none;
+ position: absolute;
+ top: 34px;
+ left: 15px;
+ width: 360px;
+ background: #fff; /* estranho bug do IE6 */
+}
+#menu li.primeiro {
+ background: url('esqMenu.jpg') no-repeat top left;
+ padding-left: 10px;
+}
+#menu li ul li {
+ border-right: 1px solid #4d224d;
+ height: 15px;
+ padding: 0 5px;
+ line-height: 15px;
+}
+#menu li ul li a {
+ color: #4d224d;
+ font-weight: bold;
+ font-size: 10px;
+}
+#menu li.sub ul li a:hover,
+#menu li.sub ul li:hover,
+#menu li.sub ul li.over {
+ background: none;
+}
+
+#menu li ul li a:hover {
+ color: #fe9900;
+ text-decoration: underline;
+}
+#menu li a {
+ color: #fff;
+ text-decoration: none;
+ text-transform: uppercase;
+ padding: 2px;
+ height: 12px;
+}
+#menu li span {
+ padding-right: 5px;
+ border-right: 1px solid #fff;
+}
+#menu li a:hover {
+ background: #9c80a8;
+}
+#menu li.sub:hover, 
+#menu li.over {
+ background: url('bgHover.jpg') no-repeat bottom center;
+}
+#menu li.sub:hover ul,
+#menu li.over ul {
+ display: block;
+}
+#menu form {
+ width: 130px;
+ position: absolute;
+ right: -209px;
+ top: 0;
+ background: url('arrow.png') no-repeat left 9px;
+ padding-left: 10px;
+}
+#menu form label.campo input {
+ color: #4d224d;
+ padding: 0 1px 0 6px;
+ font-size: 10px;
+ height: 15px;
+}
+#menu form fieldset {
+ padding-top: 2px;
+ background: url('dirMenu.jpg') no-repeat right top;
+ height: 30px;
+}
+#menu .semBorda {
+ border: none;
+}
+#ok {
+ position: relative;
+ top: 4px
+}
+</style>
+<script type="text/javascript">
+window.onload = function() {
+ if (document.all&&document.getElementById){
+ navRoot = document.getElementById('menu');
+ for (i=0; i<navRoot.childNodes.length; i++) {
+ node = navRoot.childNodes[i];
+ if (node.nodeName=='LI' && node.className=='sub'){
+ node.onmouseover=function() {
+ this.className+=' over';
+ }
+ node.onmouseout=function() {
+ this.className=this.className.replace(' over', '');
+ }
+ }
+ }
+ }
+}
+</script>
+</head> 
+<body> 
+ <ul id="menu"> 
+ <li class="primeiro"><span><a href="#">Home</a></span></li> 
+ <li><span><a href="#">Game</a></span></li> 
+ <li class="sub"><span><a href="#">Dicas e Detonados</a></span>
+ <ul> 
+ <li><a href="#">Estratégias</a></li> 
+ <li><a href="#">Telas e Mapas</a></li> 
+ <li><a href="#">Itens Secretos</a></li>
+ <li class="semBorda"><a href="">Outras</a></li> 
+ </ul> 
+ </li>
+ <li><a href="#" class="semBorda">Voltar</a></li> 
+ <li> 
+ <form action="#" method="post"> 
+ <fieldset> 
+ <label class="campo"><input type="text" name="busca" value="BUSCA" size="12" /></label> 
+ <label><input type="image" src="ok.jpg" name="ok" id="ok" value="OK" /></label> 
+ </fieldset>
+ </form> 
+ </li> 
+ </ul><!-- /menu --> 
+</body> 
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-BR">
+<head>
+  <title>William Bruno - Décimo Segundo Menu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+  <style type="text/css">
+  * { margin: 0; padding: 0; list-style: none; border: none; }
+  
+  body { font-size: 12px; font-family: Tahoma, Helvetica, sans-serif; min-width: 300px; }
+  
+  a { text-decoration: none; color: #4b4d4d; }
+  a:hover { text-decoration: underline; }
+  
+  nav { margin: 20px 0 0 20px; }
+  nav a {
+    float: left;
+    padding: 10px 15px;
+    border: 1px solid;
+    border-color: currentColor;
+    margin-right: 2px;
+    -webkit-transition: all 150ms linear;
+    -moz-transition: all 150ms linear;
+    -o-transition: all 150ms linear;
+    transition: all 150ms linear;
+  }
+  nav a:last-child { margin-right: 0; }
+  nav a:hover { 
+    color: #00ccff;
+    margin-top: 3px; 
+    -webkit-transition: all 150ms linear;
+    -moz-transition: all 150ms linear;
+    -o-transition: all 150ms linear;
+    transition: all 150ms linear;
+  }
+  nav a:active { color: #ffcc00; } 
+  @media only screen and (max-width: 500px){
+    nav { margin: 10px 10px 0 10px; }
+    nav a { float: none; display: block; margin: 0 0 2px 0; }
+    nav a:hover { margin-top: 0; }
+  }
+  @media only screen and (max-width: 320px){
+    nav a { border-radius: 5px;  }
+  }   
+  </style>
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="modernizr.js"></script>
+  <style type="text/css">nav a { border-color: #4b4d4d; }nav a:hover { border-color: #00ccff; }nav a:active { border-color: #ffcc00; }</style>
+  <![endif]-->
+</head>
+<body>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Game</a>
+    <a href="#">História</a>
+    <a href="#">Dicas e Detonados</a>
+    <a href="#">Estratégias</a>
+  </nav><!-- /nav -->
+</body>
+</html>
